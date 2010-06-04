@@ -1,0 +1,37 @@
+1.0.14 
+	* Fixed a bug in the way the SSL socket was reading. This should make SSL useable. Yay
+1.0.13
+	* Updated to support Ruby 1.9.
+1.0.12
+	* Added SSL support with the :use_ssl => 1 flag. This is a VERY experimental features. And currently only works when the SSL Buffer gets full. This seems like a bug in the way that SSLSocket responds to Kernel.select(). It seems like readline and family work directly without the select so I might just remove the select call in the future. 
+1.0.11 11/08/2007 cboyer
+	* Added output queueing
+	* Fixed the special characters in nick bug
+	* Fixed a typo in IRCConnection that was causing remove_io_socket to fail
+	
+1.0.7 12/14/2006 cboyer
+   * Added threading to event generation code, when the select loop generates and event it is now spun off and doesn't interrupt the select
+   * Added traping for SIGTERM and SIGINT
+   * Added reconnection code. The library now tries to reconnect when it gets a connection reset by peer or eof on the socket.
+   * Removed a lot of the 'puts' that are still going on. 
+1.0.6 12/08/2006 cboyer
+   * fixed a small bug in the Event parser that was causing problems with Mode events.
+
+1.0.5 08/14/2006 cmaujean
+        * fixed rdoc formatting in README
+
+1.0.5 08/09/2006
+	* fixed cmaujean's errent ChangeLog entry. Newest at the top dude.
+	* moved IRC login (NICK and REALNAME) stuff to IRCconnection.
+	* updated IRCConnection.handle_connection to take nick and realname info.
+	* created IRCConnection.create_tcp_socket for creation of sockets.
+
+1.0.4  08/01/2006 20:25:26  cmaujean  
+   * moved events out of class EventLookup and into eventmap.yml
+   * fixed EventLookup to load eventmap.yml, and accept string or number for lookup method.
+   * updated gemspec s.version to 1.0.4
+
+1.0.3  6/8/2006 
+Initial Import to Ruby-Forge
+Added support for sending CTCP messages
+
