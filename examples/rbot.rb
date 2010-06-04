@@ -4,12 +4,11 @@ require 'socket'
 
 
 botnick = "RBot"
-server  = "irc.hollensbe.org"
-#server  = "irc.freenode.net"
+server  = "irc.freenode.net"
 port    = "6667"
 channels = ["\#ruby-irc"]
-options = {:use_ssl => 1}
-#options = {}
+#options = {:use_ssl => 1}
+options = {}
 
 class RBot < IRC
   def initialize (nick, server, port, channels, options) 

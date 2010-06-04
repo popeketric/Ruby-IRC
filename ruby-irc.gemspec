@@ -2,7 +2,7 @@ require 'rubygems'
 
 SPEC = Gem::Specification.new do |s|
   s.name     = "Ruby-IRC"
-  s.version  = "1.0.13"
+  s.version  = "1.0.14"
   s.author   = "Chris Boyer"
   s.email    = "cboyer@musiciansfriend.com"
   s.homepage = "http://www.pulpreligion.org"
