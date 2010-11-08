@@ -40,8 +40,8 @@ class IRC
   attr_reader :nick, :server, :port
   
   # Join a channel, adding it to the list of joined channels
-  def add_channel channel
-    join(channel)
+  def add_channel channel, key=nil
+    join(channel, key)
     self
   end
   
@@ -82,8 +82,8 @@ class IRC
   end
   
   # Joins a channel on a server.
-  def join(channel)
-    if (IRCConnection.send_to_server("JOIN #{channel}"))
+  def join(channel, key=nil)
+    if (IRCConnection.send_to_server("JOIN #{channel} #{key}"))
       @channels.push(IRCChannel.new(channel));
     end
   end
